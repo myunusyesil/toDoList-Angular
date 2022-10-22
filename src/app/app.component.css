@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    color: rgba(65, 63, 63, 1);
+}
+
+h1 {
+    margin: 2rem;
+}
+
+.list-container {
+    background-color: #F4F4F4;
+    min-height: 600px;
+    min-width: 80%;
+    padding: 1rem;
+    box-shadow: 15.965078353881836px 11.714376449584961px 53.37325668334961px 0px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+.inputf {
+    outline: none;
+    border: none;
+    border-radius: 11px;
+    padding: 8px;
+    width: 80%;
+    margin: 2rem auto;
+
+}
+
+.inputf::placeholder {
+    color: rgba(65, 63, 63, 0.6);
+
+}
+
+.list-group {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    width: 80%;
+
+}
+
+.list-group-item {
+    /* background-color: transparent; */
+    outline: none;
+    /* border: none; */
+}
+
+
+.bi-trash {
+    color: red;
+    font-size: 1.2rem;
+}
+
+.delete-button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 6px;
+}
+
+.checked {
+    color: #B5B5BA;
+    text-decoration:line-through;
+}
+
+.checked .form-check-label{
+    text-decoration:line-through;
+}
