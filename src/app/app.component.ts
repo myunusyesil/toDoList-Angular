@@ -58,14 +58,14 @@ export class AppComponent  {
   onCheckBoxClick(event: any, listItem: {id: number, text: string, isComp: boolean}) {
  
     console.log(listItem);
-    if ( !listItem.isComp) {
+    if ( listItem.isComp == false) {
     event.target.parentElement.classList.add("checked");
+    listItem.isComp = true;
     }
     else {
       event.target.parentElement.classList.remove("checked");
+      listItem.isComp = false;
     }
-    this.isCompleted = !this.isCompleted;
-    listItem.isComp = this.isCompleted;
     // console.log(this.listArr)
 
   }

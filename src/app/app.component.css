@@ -66,10 +66,11 @@ h1 {
 }
 
 .checked {
-    color: #B5B5BA;
+    
     text-decoration:line-through;
 }
 
 .checked .form-check-label{
     text-decoration:line-through;
+    color: #B5B5BA!important;
 }
