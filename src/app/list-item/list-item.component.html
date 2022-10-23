@@ -2,5 +2,5 @@
           <li class="list-group-item" #child>
             <input class="form-check-input me-2" type="checkbox"  #check (click)="onCheckBoxClick($event, listItem)">
             <label class="form-check-label" for="firstcheckbox">{{listItem.text}}</label>
-            <button class="delete-button" (click)="onClickDel($event, child)"><i class="bi bi-trash"></i></button>
+            <button class="delete-button" (click)="onClickDel($event, child, listItem)"><i class="bi bi-trash"></i></button>
           </li>

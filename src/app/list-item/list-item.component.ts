@@ -1,4 +1,6 @@
 import { Component, ElementRef, Renderer2, Input, OnInit, ViewChild } from '@angular/core';
+import { LocalstorageService } from '../localstorage.service';
+
 
 @Component({
   selector: 'app-list-item',
@@ -10,19 +12,21 @@ export class ListItemComponent implements OnInit {
   @Input() listItem!: { id: number; text: string; isComp: boolean; };
   @ViewChild('child') chil!: ElementRef<any>;
   
-  constructor(private _elementRef: ElementRef, private rd: Renderer2) { }
+  constructor(private _elementRef: ElementRef, private rd: Renderer2, private _localStorageService: LocalstorageService) { }
 
   listArr:Array<any> = []; 
 
   ngOnInit(): void {
   }
 
-  onClickDel(event: any, element: any) {
+  onClickDel(event: any, element: any, listItem: {id: number, text: string, isComp: boolean}) {
     // debugger;
     // console.log(item)
     // console.log (this.chil);
     this.chil = element;
 
+    console.log(element.innerText);
+    this._localStorageService.removeFromLocalStorage(listItem.id);    
     this.rd.setStyle(this.chil, 'display', 'none');
   }
 
