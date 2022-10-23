@@ -8,17 +8,16 @@ import { LocalstorageService } from '../localstorage.service';
   styleUrls: ['./list-item.component.css']
 })
 export class ListItemComponent implements OnInit {
+  listArr:Array<Object> = []; 
+
+  ngOnInit(): void {
+    this.listArr = this._localStorageService.getLocalStorage();
+  }
 
   @Input() listItem!: { id: number; text: string; isComp: boolean; };
   @ViewChild('child') chil!: ElementRef<any>;
   
   constructor(private _elementRef: ElementRef, private rd: Renderer2, private _localStorageService: LocalstorageService) { }
-
-  listArr:Array<any> = []; 
-
-  ngOnInit(): void {
-    this.listArr = this._localStorageService.getLocalStorage();
-  }
 
   onClickDel(event: any, element: any, listItem: {id: number, text: string, isComp: boolean}) {
     

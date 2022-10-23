@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class LocalstorageService {
   
   getLocalStorage () {
-    return JSON.parse(localStorage.getItem("list") || ""); 
+    return (localStorage.getItem('list'))? JSON.parse(localStorage.getItem('list') || ""):[];
   } 
 
   setLocalStorage ( arr: Array<any>) {
@@ -15,14 +15,14 @@ export class LocalstorageService {
 
   removeFromLocalStorage(id: number) {
     let items = this.getLocalStorage();
-    console.log(id);
+    // console.log(id);
     items = items.filter( (item: { id: number; })  => {
         if (item.id !== id) {
         return item;
         }  
         return;
     })
-    console.log (items);
+    // console.log (items);
     localStorage.setItem('list', JSON.stringify(items));
 }
 
