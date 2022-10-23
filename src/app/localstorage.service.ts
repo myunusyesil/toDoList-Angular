@@ -23,12 +23,26 @@ export class LocalstorageService {
         return;
     })
     console.log (items);
-    return localStorage.setItem('list', JSON.stringify(items));
+    localStorage.setItem('list', JSON.stringify(items));
 }
 
   clearLocalStorage () {
     localStorage.clear();
   }
+
+  editLocalStorage (editID: number, isComp:boolean) {
+    let items = this.getLocalStorage();
+    items = items.map(function(item: { id: number; isComp: boolean; }) {
+        if (item.id == editID ) {
+            item.isComp = isComp;
+            return item;
+        }
+        else {
+        return item; }
+    })
+    localStorage.setItem('list', JSON.stringify(items));
+}
+
 
   constructor() { }
 }

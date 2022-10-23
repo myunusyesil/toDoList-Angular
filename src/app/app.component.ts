@@ -10,13 +10,17 @@ import { LocalstorageService } from './localstorage.service';
 })
 
 export class AppComponent implements OnInit {
+  listArr:Array<any> = []; 
+  title = 'toDoList';
+  inputText : string = '';
+  id: number = 0;
+  isCompleted: boolean = false;
 
   constructor(private rd: Renderer2, private _localStorageService: LocalstorageService) {}
 
   ngOnInit(): void {
     this.listArr = this._localStorageService.getLocalStorage();
   }
-
 
   @ViewChild('input') el!: ElementRef;
   @ViewChild('parent') par!: ElementRef;
@@ -30,32 +34,26 @@ export class AppComponent implements OnInit {
     isComp: false,
   };
 
-  listArr:Array<any> = []; 
-
-  title = 'toDoList';
-  inputText : string = '';
-  id: number = 0;
-  isCompleted: boolean = false;
-
   onEnter(event: any, text: string) {
+    if (this._localStorageService.getLocalStorage().length == 0 || this._localStorageService.getLocalStorage() == "" ) {
+      this.listArr = [];
+    }
     event.preventDefault();
+   
     const d = new Date;
     this.id = d.getTime();
-    this.inputText = text;
+    this.inputText = text; 
     this.listItem = {id : this.id, text: this.inputText, isComp: this.isCompleted};
     // console.log(this.listItem);
     
-    this.listArr.push(this.listItem);
     // console.log(this.listArr);
-
+    this.listArr.push(this.listItem);
+    
     this.el.nativeElement.value = "";
     // console.log(this.el.nativeElement)
     // setting local storage
     this._localStorageService.setLocalStorage(this.listArr);
-
-    if( (this.listArr.length) == 0 ) {
-      this._localStorageService.clearLocalStorage();
-    }
+ 
   }
   
     

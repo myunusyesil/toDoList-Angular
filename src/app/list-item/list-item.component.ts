@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, Input, OnInit, ViewChild, HostListener } from '@angular/core';
 import { LocalstorageService } from '../localstorage.service';
 
 
@@ -17,31 +17,43 @@ export class ListItemComponent implements OnInit {
   listArr:Array<any> = []; 
 
   ngOnInit(): void {
+    this.listArr = this._localStorageService.getLocalStorage();
   }
 
   onClickDel(event: any, element: any, listItem: {id: number, text: string, isComp: boolean}) {
-    // debugger;
+    
     // console.log(item)
     // console.log (this.chil);
     this.chil = element;
 
-    console.log(element.innerText);
     this._localStorageService.removeFromLocalStorage(listItem.id);    
     this.rd.setStyle(this.chil, 'display', 'none');
+    // debugger;
+    if(this.listArr.length == 0) {
+      this._localStorageService.clearLocalStorage();
+    }
   }
 
-  onCheckBoxClick(event: any, listItem: {id: number, text: string, isComp: boolean}) {
- 
-    console.log(listItem);
+  onCheckBoxClick(event: any, element: any, listItem: {id: number, text: string, isComp: boolean}) {
+
+    // console.log(listItem);
+    this.chil = element;
     if ( listItem.isComp == false) {
-    event.target.parentElement.classList.add("checked");
+      this.rd.addClass(this.chil, 'checked');
+    // event.target.parentElement.classList.add("checked");
     listItem.isComp = true;
     }
     else {
-      event.target.parentElement.classList.remove("checked");
+      this.rd.removeClass(this.chil, 'checked');
+      // event.target.parentElement.classList.remove("checked");
       listItem.isComp = false;
     }
     // console.log(this.listArr)
+    // change checkbox value
+    this._localStorageService.editLocalStorage(listItem.id, listItem.isComp)
+
   }
+
+
 
 }

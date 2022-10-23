@@ -9,8 +9,8 @@
     /* background-color: transparent; */
     /* border: none; */
     outline: none;
-    width: 80%!important;
-    margin: 0 auto; 
+    width: 60%;
+    margin: 0.5rem auto; 
 }
 
 .bi-trash {

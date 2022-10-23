@@ -1,6 +1,6 @@
 
           <li class="list-group-item" #child>
-            <input class="form-check-input me-2" type="checkbox"  #check (click)="onCheckBoxClick($event, listItem)">
+            <input class="form-check-input me-2" type="checkbox" [(ngModel)] ="listItem.isComp" #check (click)="onCheckBoxClick($event, child, listItem)">
             <label class="form-check-label" for="firstcheckbox">{{listItem.text}}</label>
             <button class="delete-button" (click)="onClickDel($event, child, listItem)"><i class="bi bi-trash"></i></button>
           </li>
