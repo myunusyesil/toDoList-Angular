@@ -7,24 +7,24 @@ import { ListObjectModel } from './list-object.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent  {
   @ViewChild('input') el!: ElementRef;
   @ViewChild('parent') par!: ElementRef;
   @ViewChild('child') chil!: ElementRef;
   
-   listItem: ListObjectModel = {
+  listItem: ListObjectModel = {
     id: 0,
     text: "",
     isComp: false,
-   };
+  };
 
-   listArr:Array<any> = []; 
+  listArr:Array<any> = []; 
 
   title = 'toDoList';
   inputText : string = '';
   id: number = 0;
   isCompleted: boolean = false;
-
 
   constructor(private rd: Renderer2) {}
 
@@ -36,11 +36,9 @@ export class AppComponent  {
     this.chil.nativeElement = child;
     console.log (this.par,this.chil);
     this.rd.removeChild(this.par.nativeElement, this.chil.nativeElement);
-  
   }
 
   onEnter(event: any, text: string) {
-
     event.preventDefault();
     const d = new Date;
     this.id += d.getDate(); 
@@ -48,11 +46,10 @@ export class AppComponent  {
     this.listItem = {id : this.id, text: this.inputText, isComp: this.isCompleted};
     // console.log(this.listItem);
     this.listArr.push(this.listItem);
-    
-    // console.log(this.el.nativeElement)
-    this.el.nativeElement.value = "";
     // console.log(this.listArr);
- 
+
+    this.el.nativeElement.value = "";
+    // console.log(this.el.nativeElement)
   }
 
   onCheckBoxClick(event: any, listItem: {id: number, text: string, isComp: boolean}) {
@@ -67,8 +64,6 @@ export class AppComponent  {
       listItem.isComp = false;
     }
     // console.log(this.listArr)
-
   }
   
-
 }

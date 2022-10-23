@@ -29,12 +29,10 @@ h1 {
     padding: 8px;
     width: 80%;
     margin: 2rem auto;
-
 }
 
 .inputf::placeholder {
     color: rgba(65, 63, 63, 0.6);
-
 }
 
 .list-group {
@@ -42,15 +40,13 @@ h1 {
     justify-content: center;
     margin: 1rem auto;
     width: 80%;
-
 }
 
 .list-group-item {
     /* background-color: transparent; */
-    outline: none;
     /* border: none; */
+    outline: none;
 }
-
 
 .bi-trash {
     color: red;
@@ -66,7 +62,6 @@ h1 {
 }
 
 .checked {
-    
     text-decoration:line-through;
 }
 

@@ -7,12 +7,13 @@
           <input type="text" name="" id="" class="inputf" placeholder="Write a task..." #input (keydown.enter)="onEnter($event, input.value)" >
         </form>
         <ul class="list-group" #parent>
+
           <li class="list-group-item" *ngFor="let listItem of listArr" #child>
-            
-            <input class="form-check-input me-1" type="checkbox"  #check (click)="onCheckBoxClick($event, listItem)">
+            <input class="form-check-input me-2" type="checkbox"  #check (click)="onCheckBoxClick($event, listItem)">
             <label class="form-check-label" for="firstcheckbox">{{listItem.text}}</label>
             <button class="delete-button" (click)="onClickDel($event, child)"><i class="bi bi-trash"></i></button>
           </li>
+          
         </ul>
       </div>  
     </div>
