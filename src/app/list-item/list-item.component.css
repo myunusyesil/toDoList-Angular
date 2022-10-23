@@ -1,0 +1,36 @@
+.list-group {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+
+}
+
+.list-group-item {
+    /* background-color: transparent; */
+    /* border: none; */
+    outline: none;
+    width: 80%!important;
+    margin: 0 auto; 
+}
+
+.bi-trash {
+    color: red;
+    font-size: 1.2rem;
+}
+
+.delete-button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 6px;
+}
+
+.checked {
+    text-decoration:line-through;
+}
+
+.checked .form-check-label{
+    text-decoration:line-through;
+    color: #B5B5BA!important;
+}

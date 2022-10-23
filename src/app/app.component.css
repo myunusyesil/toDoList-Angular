@@ -12,7 +12,6 @@ h1 {
 .list-container {
     background-color: #F4F4F4;
     min-height: 600px;
-    min-width: 80%;
     padding: 1rem;
     box-shadow: 15.965078353881836px 11.714376449584961px 53.37325668334961px 0px rgba(0, 0, 0, 0.2);
 }
@@ -20,6 +19,7 @@ h1 {
 .form {
     display: flex;
     justify-content: center;
+    
 }
 
 .inputf {
@@ -35,37 +35,3 @@ h1 {
     color: rgba(65, 63, 63, 0.6);
 }
 
-.list-group {
-    display: flex;
-    justify-content: center;
-    margin: 1rem auto;
-    width: 80%;
-}
-
-.list-group-item {
-    /* background-color: transparent; */
-    /* border: none; */
-    outline: none;
-}
-
-.bi-trash {
-    color: red;
-    font-size: 1.2rem;
-}
-
-.delete-button {
-    outline: none;
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    right: 6px;
-}
-
-.checked {
-    text-decoration:line-through;
-}
-
-.checked .form-check-label{
-    text-decoration:line-through;
-    color: #B5B5BA!important;
-}
