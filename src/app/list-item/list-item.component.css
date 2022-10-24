@@ -39,3 +39,9 @@
 .hover {
  display: block;
 }
+
+.itemBackground {
+    background-color: #ebebebd5;
+    transition: ease .5s;
+    transform: scale(1.02);
+}
