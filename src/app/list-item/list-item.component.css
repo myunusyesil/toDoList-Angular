@@ -10,12 +10,13 @@
     /* border: none; */
     outline: none;
     width: 60%;
-    margin: 0.5rem auto; 
+    margin: 0 auto; 
 }
 
 .bi-trash {
     color: red;
     font-size: 1.2rem;
+    display: none;
 }
 
 .delete-button {
@@ -33,4 +34,8 @@
 .checked .form-check-label{
     text-decoration:line-through;
     color: #B5B5BA!important;
+}
+
+.hover {
+ display: block;
 }

@@ -8,6 +8,9 @@ import { LocalstorageService } from '../localstorage.service';
   styleUrls: ['./list-item.component.css']
 })
 export class ListItemComponent implements OnInit {
+
+  
+
   listArr:Array<Object> = []; 
 
   ngOnInit(): void {
