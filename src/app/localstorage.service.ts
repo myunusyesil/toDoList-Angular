@@ -12,7 +12,7 @@ export class LocalstorageService {
   setLocalStorage ( arr: Array<any>) {
     localStorage.setItem('list', JSON.stringify(arr));
   }
-
+  
   removeFromLocalStorage(id: number) {
     let items = this.getLocalStorage();
     // console.log(id);

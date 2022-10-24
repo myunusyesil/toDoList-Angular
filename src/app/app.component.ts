@@ -47,12 +47,15 @@ export class AppComponent implements OnInit {
     // console.log(this.listItem);
     
     // console.log(this.listArr);
-    this.listArr.push(this.listItem);
-    
-    this.el.nativeElement.value = "";
-    // console.log(this.el.nativeElement)
-    // setting local storage
-    this._localStorageService.setLocalStorage(this.listArr);
+    if(this.inputText !== "") {
+      this.listArr.push(this.listItem);
+      this.el.nativeElement.value = "";
+      // console.log(this.el.nativeElement)
+      // setting local storage
+      this._localStorageService.setLocalStorage(this.listArr);
+    }
+
+
  
   }
   

@@ -19,7 +19,6 @@ export class DelonhoverDirective implements OnInit{
     this.el.nativeElement.classList.remove('itemBackground')
   }
   constructor(private el: ElementRef, private rd: Renderer2) {
- 
    }
 
 
