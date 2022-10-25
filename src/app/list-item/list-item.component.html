@@ -1,6 +1,6 @@
 
-          <li class="list-group-item" #child appDelonhover>
-            <input class="form-check-input me-2" type="checkbox" [(ngModel)] ="listItem.isComp" #check (click)="onCheckBoxClick($event, child, listItem)">
+          <li class="list-group-item" #child appDelonhover (click)="onCheckBoxClick($event, child, listItem)">
+            <input class="form-check-input me-2" type="checkbox" [(ngModel)] ="listItem.isComp" #check>
             <label class="form-check-label" for="firstcheckbox">{{listItem.text}}</label>
             <button class="delete-button" (click)="onClickDel($event, child, listItem)"><i class="bi bi-trash"></i></button>
           </li>
