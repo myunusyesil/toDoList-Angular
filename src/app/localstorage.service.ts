@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class LocalstorageService {
   
   getLocalStorage () {
-    return (localStorage.getItem('list'))? JSON.parse(localStorage.getItem('list') || ""):[];
+    return (localStorage.getItem('list')) ? JSON.parse(localStorage.getItem('list') || ""):[];
   } 
 
   setLocalStorage ( arr: Array<any>) {
