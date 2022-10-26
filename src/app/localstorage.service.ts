@@ -42,7 +42,5 @@ export class LocalstorageService {
     })
     localStorage.setItem('list', JSON.stringify(items));
 }
-
-
   constructor() { }
 }

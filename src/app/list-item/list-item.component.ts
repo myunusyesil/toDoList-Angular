@@ -53,9 +53,6 @@ export class ListItemComponent implements OnInit {
     // console.log(this.listArr)
     // change checkbox value
     this._localStorageService.editLocalStorage(listItem.id, listItem.isComp)
-
   }
-
-
 
 }
